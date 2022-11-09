@@ -14,7 +14,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'api',
+        // if you want to use api change guard=api to use jwt token
+        'guard' => 'web',
         'passwords' => 'users',
     ],
 
@@ -36,10 +37,12 @@ return [
     */
 
     'guards' => [
-        // 'web' => [
-        //     'driver' => 'session',
-        //     'provider' => 'users',
-        // ],
+        // use this to laravel/ui
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+        // use this for jwt token i made
         'api' => [
             'driver' => 'jwt',
             'provider' => 'users',
